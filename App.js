@@ -119,7 +119,6 @@ export default function App() {
           value={heightText}
         />
       </View>
-      //VANISHING COMPONENT
       <View style={styles.vanishingComponent}>
         {shouldShow ? (
           <TextInput
