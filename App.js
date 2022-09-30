@@ -88,7 +88,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>BMI Calculator</Text>
-      //SWITCH
+
       <View style={styles.switchContainer}>
         <Text style={styles.metricOptions}>Metric System</Text>
         <Switch
@@ -100,7 +100,7 @@ export default function App() {
         />
         <Text style={styles.metricOptions}>Imperial System</Text>
       </View>
-      //WEIGHT LABEL AND INPUT
+
       <View style={styles.columnContainer}>
         <Text>Weight</Text>
         <TextInput
@@ -112,7 +112,7 @@ export default function App() {
           value={weightText}
         />
       </View>
-      //HEIGHT LABEL AND INPUT
+
       <View style={styles.columnContainer}>
         <Text>Height</Text>
         <TextInput
@@ -124,7 +124,7 @@ export default function App() {
           value={heightText}
         />
       </View>
-      //VANISHING COMPONENT
+
       <View style={styles.vanishingComponent}>
         {shouldShow ? (
           <TextInput
@@ -136,11 +136,11 @@ export default function App() {
           />
         ) : null}
       </View>
-      //BUTTON
+
       <View style={styles.button}>
         <Button title="Calculate!" color="#ffffff" onPress={calculateBMI} />
       </View>
-      //RESULT LABEL
+
       <Text style={styles.headerText}>{resultLabel}</Text>
       <StatusBar style="auto" />
     </View>
