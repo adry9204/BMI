@@ -38,7 +38,6 @@ export default function App() {
   };
 
   //updating labels, inputs and placeholders
-  //when swithc is toggled
   const changeLabelsValues = () => {
     setWeightLabel(isEnabled ? "Kilograms..." : "Pounds...");
     setHeightLabel(isEnabled ? "Centimeters..." : "Feets...");
@@ -71,7 +70,6 @@ export default function App() {
     );
   };
 
-  //retrieve weight category by bmi
   const getWeightCategory = (bmiValue) => {
     switch (true) {
       case bmiValue <= 18.5:
