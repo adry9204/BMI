@@ -25,7 +25,7 @@ export default function App() {
   const [heightLabel, setHeightLabel] = useState("Centimeters...");
 
   const [resultLabel, setResultLabel] = useState(
-    "Enter your weight and height!"
+    "Enter your weight and height to get started"
   );
 
   var weight = 0;
@@ -35,18 +35,15 @@ export default function App() {
   const toggleSwitch = () => {
     setIsEnabled((previousState) => !previousState);
     changeLabelsValues();
-  };
-
-  //updates interface values of inputs, placeholders and result label
-  //when Switch toggles
-  const changeLabelsValues = () => {
-    setWeightLabel(isEnabled ? "Kilograms..." : "Pounds...");
-    setHeightLabel(isEnabled ? "Centimeters..." : "Feets...");
     setShouldShow(!shouldShow);
     setWeightText("");
     setHeightText("");
     setInchesText("");
-    setResultLabel("Enter your weight and height!");
+  };
+
+  const changeLabelsValues = () => {
+    setWeightLabel(isEnabled ? "Kilograms..." : "Pounds...");
+    setHeightLabel(isEnabled ? "Centimeters..." : "Feets...");
   };
 
   const calculateBMI = () => {
@@ -71,7 +68,6 @@ export default function App() {
     );
   };
 
-  //retrieve weight category by bmi
   const getWeightCategory = (bmiValue) => {
     switch (true) {
       case bmiValue <= 18.5:
@@ -88,7 +84,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>BMI Calculator</Text>
-      //SWITCH
+
       <View style={styles.switchContainer}>
         <Text style={styles.metricOptions}>Metric System</Text>
         <Switch
@@ -100,7 +96,7 @@ export default function App() {
         />
         <Text style={styles.metricOptions}>Imperial System</Text>
       </View>
-      //WEIGHT LABEL AND INPUT
+
       <View style={styles.columnContainer}>
         <Text>Weight</Text>
         <TextInput
@@ -112,7 +108,7 @@ export default function App() {
           value={weightText}
         />
       </View>
-      //HEIGHT LABEL AND INPUT
+
       <View style={styles.columnContainer}>
         <Text>Height</Text>
         <TextInput
@@ -124,7 +120,7 @@ export default function App() {
           value={heightText}
         />
       </View>
-      //VANISHING INPUT
+
       <View style={styles.vanishingComponent}>
         {shouldShow ? (
           <TextInput
@@ -136,11 +132,11 @@ export default function App() {
           />
         ) : null}
       </View>
-      //BUTTON
+
       <View style={styles.button}>
         <Button title="Calculate!" color="#ffffff" onPress={calculateBMI} />
       </View>
-      //RESULT LABEL
+
       <Text style={styles.headerText}>{resultLabel}</Text>
       <StatusBar style="auto" />
     </View>
@@ -166,6 +162,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 250,
   },
+
   button: {
     backgroundColor: "#281E5D",
     borderRadius: 5,
